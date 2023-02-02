@@ -39,15 +39,12 @@ function Community() {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const response = await fetch(
-          "https://writeimg.onrender.com/api/v1/posts",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const response = await fetch("http://localhost:4646/api/v1/posts", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
 
         if (response.ok) {
           const result = await response.json();
@@ -87,7 +84,7 @@ function Community() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto flex flex-col justify-center items-center relative">
+    <section className="max-w-3xl mx-auto">
       <div>
         <h1 className="my-2 text-3xl font-semibold text-slate-900">
           Community Showcase

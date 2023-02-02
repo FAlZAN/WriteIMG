@@ -7,14 +7,15 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <section className="max-w-3xl mx-auto flex flex-col justify-center items-center">
-      <div className="w-full">
-        <div className="py-8">
-          <p className="text-4xl">Welcome to</p>
-          <p className="text-6xl font-semibold">WRITE IMG</p>
+    <section className="max-w-3xl mx-auto -mt-1 flex flex-col justify-center items-center">
+      <div>
+        <div className="py-12">
+          <p className="text-5xl text-center">
+            Welcome to <br /> <strong className="text-7xl">WriteIMG</strong>
+          </p>
         </div>
 
-        <div className="mb-8 text-base flex flex-col gap-2">
+        <div className="mb-8 text-lg flex flex-col gap-2">
           <p>
             WRITE IMG is built on top of DALL·E 2 by OpenAI. It is an AI system
             that can create realistic images and art from a description in
@@ -31,25 +32,16 @@ function Home() {
 
           <Link to="/post">
             <button className="bg-green-500 px-4 py-2 text-white text-sm rounded-md">
-              Create Image
+              Generate Image
             </button>
           </Link>
         </div>
-
-        {/* <div>
-          <p>Visit Community Showcase</p>
-          <Link to="/community">
-            <button className="bg-[#6469ff] px-4 py-2 text-white rounded-md">
-              Community
-            </button>
-          </Link>
-        </div> */}
       </div>
 
       <div className="text-base flex flex-col gap-4">
         <p>It is as simple as it sounds.</p>
 
-        <ol className="list-decimal flex flex-col gap-4">
+        <ol className="px-4 list-decimal flex flex-col gap-4">
           <li>
             <span className="flex flex-col gap-4">
               <p>Describe the image as you need in a prompt field.</p>

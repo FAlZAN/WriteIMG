@@ -20,11 +20,15 @@ function Header() {
   };
 
   return (
-    <header className="w-full bg-white/50  backdrop-blur fixed left-0 top-0 z-10">
-      <div className="px-8 py-4 flex justify-between items-center">
+    <header className="w-full bg-white/50 backdrop-blur fixed left-0 top-0 z-10">
+      <div className="px-4 py-4 flex justify-between items-center">
         <div>
           <Link to="/">
-            <img src={logoLight} width="120" alt="write image logo" />
+            <img
+              className="w-24 h-auto"
+              src={logoLight}
+              alt="write image logo"
+            />
           </Link>
         </div>
 

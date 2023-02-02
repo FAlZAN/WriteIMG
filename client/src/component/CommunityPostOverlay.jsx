@@ -1,20 +1,26 @@
 import React, { useContext } from "react";
 import download from "../assets/download.svg";
 import expand from "../assets/expand.svg";
+import { downloadImage } from "../utils/index";
 
 //global community context
 import { CommunityContext } from "../context/CommunityContext";
 
 function CommunityPostOverlay({
+  _id,
   name,
   prompt,
-  imgUrl,
+  photo,
   setIsFullScreenVisible,
 }) {
   const { dispatch } = useContext(CommunityContext);
 
+  const handleDownload = () => {
+    downloadImage(_id, photo);
+  };
+
   const handleFullScreen = () => {
-    dispatch({ type: "SET_IMGSOURCE", payload: imgUrl });
+    dispatch({ type: "SET_IMGSOURCE", payload: photo });
     setIsFullScreenVisible(true);
   };
 
@@ -26,17 +32,13 @@ function CommunityPostOverlay({
       </div>
 
       <div className="w-full rounded-sm cursor-pointer flex justify-evenly items-center">
-        <a
-          className="w-full flex justify-center"
-          href={imgUrl}
-          download={prompt}
-        >
-          <img className="w-6 h-6" src={download} alt="download icon" />
-        </a>
+        <button onClick={handleDownload}>
+          <img className="w-6 h-6" src={download} alt="download button" />
+        </button>
 
-        <span className="w-full flex justify-center" onClick={handleFullScreen}>
+        <button onClick={handleFullScreen}>
           <img className="w-6 h-6" src={expand} alt="fullscreen" />
-        </span>
+        </button>
       </div>
     </div>
   );

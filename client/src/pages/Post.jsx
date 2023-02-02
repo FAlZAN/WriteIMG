@@ -135,7 +135,7 @@ function Post() {
               </button>
             </div>
 
-            <div className="h-96 p-2 border border-gray-300 rounded-md flex justify-center items-center relative">
+            <div className="w-full h-[85vw] md:w-[40vw] md:h-[40vw] xl:w-[40vw] xl:h-[40vw] mx-auto p-2 border border-gray-300 rounded-md flex justify-center items-center relative">
               {form.photo ? (
                 <img
                   className="w-full h-full object-contain"

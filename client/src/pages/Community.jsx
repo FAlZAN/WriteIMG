@@ -111,7 +111,7 @@ function Community() {
 
         <div>
           {loading ? (
-            <div className="h-full flex justify-center items-center">
+            <div className="h-[50vh] flex justify-center items-center">
               <svg
                 aria-hidden="true"
                 className="inline w-10 h-10 mr-2 text-gray-200 animate-spin fill-[#6469ff]"

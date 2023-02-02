@@ -1,46 +1,34 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import CommunityPostOverlay from "./CommunityPostOverlay";
 
-function Card({ name, prompt, photo, setIsFullScreenVisible }) {
-  const [imgUrl, setImgUrl] = useState("");
+function Card({ _id, name, prompt, photo, setIsFullScreenVisible }) {
   const [isDetailVisible, setIsDetailVisible] = useState(false);
 
-  useEffect(() => {
-    const fetchImg = async () => {
-      const image = await fetch(photo);
-      const imageBlob = await image.blob();
-      const imageUrl = URL.createObjectURL(imageBlob);
-      setImgUrl(imageUrl);
-    };
+  const handleMouseOver = () => {
+    setIsDetailVisible(true);
+  };
 
-    fetchImg();
-  }, []);
-
-  const handleClick = () => {
-    isDetailVisible === true
-      ? setIsDetailVisible(false)
-      : setIsDetailVisible(true);
+  const handleMouseLeave = () => {
+    setIsDetailVisible(false);
   };
 
   return (
     <div
       className="rounded-md relative"
-      // onClick={handleClick}
-      onMouseLeave={() => setIsDetailVisible(false)}
-      onMouseOver={() => {
-        setIsDetailVisible(true);
-      }}
+      onMouseOver={handleMouseOver}
+      onMouseLeave={handleMouseLeave}
     >
       <img className="rounded-md" src={photo} alt={prompt} />
 
-      {isDetailVisible ? (
+      {isDetailVisible && (
         <CommunityPostOverlay
+          _id={_id}
           name={name}
           prompt={prompt}
-          imgUrl={imgUrl}
+          photo={photo}
           setIsFullScreenVisible={setIsFullScreenVisible}
         />
-      ) : null}
+      )}
     </div>
   );
 }

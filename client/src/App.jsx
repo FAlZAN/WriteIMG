@@ -8,8 +8,8 @@ import { CommunityContextProvider } from "./context/CommunityContext";
 function App() {
   return (
     <CommunityContextProvider>
-      <BrowserRouter>
-        <div className="h-screen px-8 font-DMSans flex flex-col justify-between relative">
+      <BrowserRouter basename="/">
+        <div className="h-screen px-4 font-DMSans flex flex-col justify-between relative">
           <Header />
           <main className="pt-[73px]">
             <Routes>

@@ -106,7 +106,7 @@ function Post() {
               id="name"
               placeholder="Ex. Teman Hoppo"
               onChange={handleChange}
-              required
+              required={true}
             />
           </div>
 
@@ -122,7 +122,7 @@ function Post() {
               placeholder="A Samurai riding a Horse on Mars, lomography."
               value={form.prompt}
               onChange={handleChange}
-              required
+              required={true}
               autoComplete="off"
             />
             <button

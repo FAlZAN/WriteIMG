@@ -23,22 +23,22 @@ function Home() {
           </p>
         </div>
 
-        <div className="mb-8 flex gap-2 lg:gap-4">
+        <div className="mb-8 flex flex-col md:flex-row gap-2 lg:gap-4">
           <Link to="/community">
-            <button className="bg-indigo-500 px-4 py-2 text-white text-sm rounded-md">
+            <button className="bg-indigo-500 w-full md:w-fit py-2 md:px-4 text-white rounded-md">
               Browse Community Showcase
             </button>
           </Link>
 
           <Link to="/post">
-            <button className="bg-green-500 px-4 py-2 text-white text-sm rounded-md">
+            <button className="bg-green-500 w-full md:w-fit py-2 md:px-4 text-white rounded-md">
               Generate Image
             </button>
           </Link>
         </div>
       </div>
 
-      <div className="text-base flex flex-col gap-4">
+      <div className="text-lg flex flex-col gap-4">
         <p>It is as simple as it sounds.</p>
 
         <ol className="px-4 list-decimal flex flex-col gap-4">

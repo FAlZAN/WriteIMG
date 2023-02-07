@@ -30,10 +30,14 @@ router.post("/", async (request, response) => {
     const db = getDB();
     const { name, prompt, photo } = request.body;
     const photoUrl = await cloudinary.uploader.upload(photo);
+    // adding params for image optimization
+    const urlArr = photoUrl.secure_url.split("/");
+    urlArr.splice(6, 0, "q_auto,f_auto");
+    const optimizedUrl = urlArr.join("/");
 
     const newPost = await db
       .collection("Posts")
-      .insertOne({ name, prompt, photo: photoUrl.secure_url });
+      .insertOne({ name, prompt, photo: optimizedUrl });
 
     response.status(201).json({ success: true, data: newPost });
   } catch (error) {

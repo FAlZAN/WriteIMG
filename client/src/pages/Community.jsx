@@ -87,7 +87,7 @@ function Community() {
   };
 
   return (
-    <section className="max-w-3xl mx-auto">
+    <section className="max-w-4xl mx-auto">
       <div>
         <h1 className="my-2 text-3xl font-semibold text-slate-900">
           Community Showcase

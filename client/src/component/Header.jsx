@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import logoLight from "../assets/logo-light.svg";
 import { Link } from "react-router-dom";
+// icons
+import logoLight from "../assets/logo-light.svg";
 import ham from "../assets/ham.svg";
 import close from "../assets/close.svg";
 
@@ -20,7 +21,7 @@ function Header() {
   };
 
   return (
-    <header className="w-full bg-white/50 backdrop-blur fixed left-0 top-0 z-10">
+    <header className="w-full bg-white drop-shadow-md  fixed left-0 top-0 z-10">
       <div className="px-4 py-4 flex justify-between items-center">
         <div>
           <Link to="/">

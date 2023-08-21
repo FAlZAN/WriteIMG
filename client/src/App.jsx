@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter basename="/">
         <div className="h-screen px-4 font-DMSans flex flex-col justify-between relative">
           <Header />
-          <main className="pt-[73px]">
+          <main className="mt-4 pt-[73px]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/post" element={<Post />} />
